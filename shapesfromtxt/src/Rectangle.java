@@ -35,6 +35,6 @@ public class Rectangle extends Shape{
 
     @Override
     public String toString() {
-        return super.toString() + " width=" + width + ", height=" + height + "]";
+        return super.toString() + " " + width + " " + height;
     }
 }

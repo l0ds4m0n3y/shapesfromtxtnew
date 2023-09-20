@@ -36,6 +36,6 @@ public class Ellipse extends Shape{
 
     @Override
     public String toString() {
-        return super.toString() + "a=" + a + ", b=" + b;
+        return super.toString() + " " + a + " " + b;
     }
 }

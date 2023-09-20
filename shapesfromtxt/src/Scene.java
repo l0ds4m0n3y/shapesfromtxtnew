@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Color;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -124,12 +125,14 @@ public class Scene {
      */
     public double aveWidthOfRectanglesContaining( int x, int y ) {
         double sumOfWidth = 0;
+        double numOfRect = 0;
         for(Shape s : shapes){
             if(s instanceof Rectangle && s.contains(x, y)){
                 sumOfWidth += ((Rectangle)s).getWidth();
+                numOfRect++;
             }
         }
-        return sumOfWidth / (double) Rectangle.getNumRectangles();
+        return sumOfWidth / numOfRect;
     }
 
     /**
@@ -139,6 +142,15 @@ public class Scene {
      * @param fileName the name of the file to save to.
      */
     public void save( String fileName ) throws IOException {
-
+        FileWriter writer = new FileWriter(fileName);
+        for(Shape s : shapes){
+            if(s instanceof Rectangle) 
+                writer.write("R ");
+            else 
+                writer.write("E ");
+            writer.write(s.toString());
+            writer.write('\n');
+        }
+        writer.close();
     }
 }
