@@ -7,8 +7,7 @@ public class Main {
         Scene scn = new Scene();
 
         // Load the scene
-        scn.load("poopy.txt");
-        System.out.println(scn.aveWidthOfRectanglesContaining(250, 250));
+        scn.load("cat.txt");
 
         // Create a DrawingCanvas and get the Graphics object.
         DrawingCanvas can = new DrawingCanvas(1024, 768);

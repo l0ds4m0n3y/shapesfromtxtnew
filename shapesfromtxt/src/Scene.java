@@ -94,7 +94,11 @@ public class Scene {
      * @return an array of Shape objects that contain (x,y)
      */
     public Shape[] findAllContaining( int x, int y ) {
-        return null;
+        ArrayList<Shape> shapesList = new ArrayList<>();
+        for(Shape s : shapes){
+            if (s.contains(x, y)) shapes.add(s);
+        }
+        return shapesList.toArray(new Shape[shapesList.size()]);
     }
 
     /**
@@ -112,7 +116,14 @@ public class Scene {
      * @param y the y-coordinate of the point to test.
      * @return the first Ellipse object containing (x,y) or null.
      */
-    public Ellipse findFirstEllipseContaining( int x, int y ) { return null; }
+    public Ellipse findFirstEllipseContaining( int x, int y ) {
+        for(Shape s : shapes){
+            if(s instanceof Ellipse && s.contains(x, y)){
+                return (Ellipse) s;
+            }
+        }
+        return null;
+     }
 
     /**
      * Computes and returns the average width of all Rectangle objects that
