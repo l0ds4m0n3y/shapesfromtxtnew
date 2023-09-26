@@ -7,7 +7,7 @@ public class Main {
         Scene scn = new Scene();
 
         // Load the scene
-        scn.load("cat.txt");
+        scn.load("abstract.txt");
 
         // Create a DrawingCanvas and get the Graphics object.
         DrawingCanvas can = new DrawingCanvas(1024, 768);
@@ -15,6 +15,6 @@ public class Main {
 
         // Draw the Scene
         scn.draw(g);
-        scn.save("poopy.txt");
+        scn.save("new.txt");
     }
 }
